@@ -1,21 +1,18 @@
-import { View, Text, StyleSheet } from "react-native";
-import { useState, useEffect, useRef } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { useEffect, useRef, useState } from "react";
+import { StyleSheet, View } from "react-native";
 import {
   ActivityIndicator,
   Button,
-  Headline,
   Portal,
   Snackbar,
   Subheading,
   TextInput,
 } from "react-native-paper";
-import {
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signOut,
-} from "firebase/auth";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { auth } from "./firebase";
 
 const LoginScreen = ({ navigation }) => {
